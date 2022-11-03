@@ -1,0 +1,4 @@
+# Project exclude paths
+/GateWay/target/
+/Order/target/
+/Stock/target/
