@@ -3,6 +3,7 @@ package com.meet.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,10 +21,13 @@ public class StockController {
     String port;
    @Resource
    ServerProperties serverProperties;
+
     @RequestMapping("/deduct")
+    @LoadBalanced
     public String deduction(){
 
         System.out.println("扣除库存");
+
         return "扣除"+serverProperties.getPort()+port;
     }
 }

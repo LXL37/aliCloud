@@ -18,19 +18,20 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/order")
-
+@RefreshScope
 public class OrderController {
     @Resource
     StockServiceFeign stockServiceFeign;
-    @Value("${my.name}")
+    @Value("${myInfo.name}")
     String userName;
 
     @SentinelResource(value = "add",blockHandler = "flowBlockHandler")
     @RequestMapping("/add")
     public String add(){
+
         System.out.println("下单成功");
         String deduction = stockServiceFeign.deduction();
-        return "订单："+deduction+"----"+userName;
+        return userName+"----订单："+deduction+"----";
     }
 
     public String flowBlockHandler(BlockException blockException){

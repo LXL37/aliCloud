@@ -11,20 +11,22 @@ spring:
         password: nacos
         namespace: public
       server-addr: 127.0.0.1:8848
-    sentinel:
-      transport:
-        dashboard: 127.0.0.1:8858
-      log:
-        dir: D:\1logs\sentinel_log
 
 
-logging:
-  level:
-    com.meet.feign: debug   #指定 日志的作用域
+#    sentinel:
+#      transport:
+#        dashboard: 127.0.0.1:8858
+#      log:
+#        dir: D:\1logs\sentinel_log
 
-feign:
-  client:
-    config:
-      stock-service:   #对应服务模块名称
-        loggerLevel: NULL    #日志级别
+#
+#logging:
+#  level:
+#    com.meet.feign: debug   #指定 日志的作用域
+#
+#feign:
+#  client:
+#    config:
+#      stock-service:   #对应服务模块名称
+#        loggerLevel: NULL    #日志级别
 

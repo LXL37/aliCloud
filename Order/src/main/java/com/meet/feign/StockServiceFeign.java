@@ -16,17 +16,4 @@ public interface StockServiceFeign {
        String deduction();
 }
 
-/*
-@RestController
-@RequestMapping("/stock")
-public class StockController {
 
-
-    @RequestMapping("/deduct")
-    public String deduction(){
-
-        System.out.println("扣除库存");
-        return "扣除";
-    }
-}
-*/
